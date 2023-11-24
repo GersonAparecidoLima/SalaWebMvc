@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SalesWebMvc.Models;
 using SalesWebMvc.Services;
 using System;
 using System.Collections.Generic;
@@ -31,5 +32,25 @@ namespace SalesWebMvc.Controllers
             // Passando list como agumento para a Views
             return View(list);
         }
+
+
+        public IActionResult Create()
+        {
+            // var departments = await _departmentService.FindAllAsync();
+            //var viewModel = new SellerFormViewModel { Departments = departments };
+            //return View(viewModel);
+            return View();
+        }
+        //Ação de post
+        [HttpPost]
+        //previnindo ataques CSRF, aproveintando a sua sessão
+        [AutoValidateAntiforgeryToken]
+        public IActionResult Create(Seller saller)
+        {
+            _sellerService.Insert(saller);
+            return RedirectToAction(nameof(Index));
+        }
+
+
     }
 }

@@ -24,6 +24,12 @@ namespace SalesWebMvc.Services
         {
             return await _context.Seller.ToListAsync();
         }
+        public void Insert(Seller obj) {
+            _context.Add(obj);
+            //Confirmando no banco de dados
+            _context.SaveChanges();
+
+        }
 
     }
 }
