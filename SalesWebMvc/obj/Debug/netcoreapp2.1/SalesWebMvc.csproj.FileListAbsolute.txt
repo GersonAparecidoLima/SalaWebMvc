@@ -7,7 +7,6 @@ C:\dev\SalesWebMvc\SalesWebMvc\bin\Debug\netcoreapp2.1\SalesWebMvc.dll
 C:\dev\SalesWebMvc\SalesWebMvc\bin\Debug\netcoreapp2.1\SalesWebMvc.pdb
 C:\dev\SalesWebMvc\SalesWebMvc\bin\Debug\netcoreapp2.1\SalesWebMvc.Views.dll
 C:\dev\SalesWebMvc\SalesWebMvc\bin\Debug\netcoreapp2.1\SalesWebMvc.Views.pdb
-C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\SalesWebMvc.csproj.AssemblyReference.cache
 C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\SalesWebMvc.GeneratedMSBuildEditorConfig.editorconfig
 C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\SalesWebMvc.AssemblyInfoInputs.cache
 C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\SalesWebMvc.AssemblyInfo.cs
@@ -26,6 +25,7 @@ C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.cs
 C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.cshtml.g.cs
 C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.cshtml.g.cs
+C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Index.cshtml.g.cs
 C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
 C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -39,4 +39,4 @@ C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\SalesWebMvc.dll
 C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\SalesWebMvc.pdb
 C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\SalesWebMvc.genruntimeconfig.cache
 C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\SalesWebMvc.csproj.CopyComplete
-C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\Razor\Views\Sellers\Index.cshtml.g.cs
+C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp2.1\SalesWebMvc.csproj.AssemblyReference.cache

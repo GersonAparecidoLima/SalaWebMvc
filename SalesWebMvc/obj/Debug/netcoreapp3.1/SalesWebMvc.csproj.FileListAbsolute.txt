@@ -1,0 +1,13 @@
+C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp3.1\SalesWebMvc.csproj.AssemblyReference.cache
+C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp3.1\SalesWebMvc.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp3.1\SalesWebMvc.AssemblyInfoInputs.cache
+C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp3.1\SalesWebMvc.AssemblyInfo.cs
+C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp3.1\SalesWebMvc.csproj.CoreCompileInputs.cache
+C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp3.1\SalesWebMvc.MvcApplicationPartsAssemblyInfo.cache
+C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp3.1\SalesWebMvc.RazorAssemblyInfo.cache
+C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp3.1\SalesWebMvc.RazorAssemblyInfo.cs
+C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp3.1\SalesWebMvc.TagHelpers.input.cache
+C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp3.1\SalesWebMvc.TagHelpers.output.cache
+C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp3.1\SalesWebMvc.RazorCoreGenerate.cache
+C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp3.1\SalesWebMvc.dll
+C:\dev\SalesWebMvc\SalesWebMvc\obj\Debug\netcoreapp3.1\SalesWebMvc.pdb
