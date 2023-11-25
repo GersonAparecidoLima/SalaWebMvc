@@ -13,13 +13,13 @@ namespace SalesWebMvc.Controllers
 
         //Declarando um dependia para o service SellerService
         private readonly SellerService _sellerService;
+        private readonly DepartmentService _departmentService;
 
-
-        public SellersController(SellerService sellerService)
+        public SellersController(SellerService sellerService, DepartmentService departmentService)
         {
             // Injeção de dependencia concluido.
             _sellerService = sellerService;
-          
+            _departmentService = departmentService;
         }
 
 
@@ -34,20 +34,32 @@ namespace SalesWebMvc.Controllers
         }
 
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            // var departments = await _departmentService.FindAllAsync();
-            //var viewModel = new SellerFormViewModel { Departments = departments };
-            //return View(viewModel);
-            return View();
+            //Buscar do banco de dados todos os departamentos
+            var departments = await _departmentService.FindAllAsync();
+            //Agora a tela de cadastro quando for aberta pela 1 vez ela já
+            //vai trazer os dados do departamento populado
+            var viewModel = new SellerFormViewModel { Departments = departments };
+            return View(viewModel);
         }
-        //Ação de post
+
+
+        
+        
+        //Recebe ação de post
         [HttpPost]
         //previnindo ataques CSRF, aproveintando a sua sessão
-        [AutoValidateAntiforgeryToken]
-        public IActionResult Create(Seller saller)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Seller seller)
         {
-            _sellerService.Insert(saller);
+            if (!ModelState.IsValid)
+            {
+                var departments = await _departmentService.FindAllAsync();
+                var viewModel = new SellerFormViewModel { Seller = seller, Departments = departments };
+                return View(viewModel);
+            }
+            await _sellerService.InsertAsync(seller);
             return RedirectToAction(nameof(Index));
         }
 
