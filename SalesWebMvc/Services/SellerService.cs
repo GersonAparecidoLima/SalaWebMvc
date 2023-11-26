@@ -35,6 +35,7 @@ namespace SalesWebMvc.Services
         public async Task<Seller> FindByIdAsync(int id)
         {
             //retornando o vendedor, caso não tenha vendedor retorna nulo
+            //esta expreção Include atraves da expresão lanbd faz um join
             return await _context.Seller.Include(obj => obj.Department).FirstOrDefaultAsync(obj => obj.Id == id);
         }
 
