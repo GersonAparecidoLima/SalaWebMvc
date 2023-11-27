@@ -56,6 +56,8 @@ namespace SalesWebMvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Seller seller)
         {
+            //Verifica a validação se esta correta no formulario
+            //Esta validação esta sendo feita na model
             if (!ModelState.IsValid)
             {
                 var departments = await _departmentService.FindAllAsync();
@@ -142,6 +144,11 @@ namespace SalesWebMvc.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Seller seller)
         {
+
+            //************************************************************
+            //****Verifica a validação se esta correta no formulario******
+            //****Esta validação esta sendo feita na model****************
+            //************************************************************
             //trata o caso em que o modelo (dados do formulário) não é válido,
             //retornando a página do formulário com os dados do vendedor e a lista de
             //departamentos para que o usuário possa corrigir qualquer erro de validação.
