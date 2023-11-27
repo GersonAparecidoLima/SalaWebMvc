@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace SalesWebMvc.Models
@@ -8,8 +9,27 @@ namespace SalesWebMvc.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        [Required(ErrorMessage = "{0} required")]
+        [EmailAddress(ErrorMessage = "Enter a valid email")]
+        //transformando o Email em um link de e-mail
+        //Acinando o aplicativo de e-mail padrão
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
+
+        [Required(ErrorMessage = "{0} required")]
+        //Aqui eu altera o titulo da coluna na view
+        [Display(Name = "Data Nascimento")]
+        //para apresentar somente o calendario sem hora minuto e segundo
+        [DataType(DataType.Date)]
+        //Colocando mascara na data
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime BirthDate { get; set; }
+
+        
+        //Aqui eu altera o titulo da coluna na view
+        [Display(Name = "Salário base")]
+        //Colocando duas casa decimais com formatação
+        [DisplayFormat(DataFormatString = "{0:F2}")]
         public double BaseSalary { get; set; }
         public Department Department { get; set; }
         public int DepartmentId { get; set; }
