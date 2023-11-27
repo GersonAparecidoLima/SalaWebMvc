@@ -5,6 +5,7 @@ using SalesWebMvc.Models;
 using SalesWebMvc.Services;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -167,7 +168,15 @@ namespace SalesWebMvc.Controllers
             }
         }
 
-
+        public IActionResult Error(string message)
+        {
+            var viewModel = new ErrorViewModel
+            {
+                Message = message,
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier
+            };
+            return View(viewModel);
+        }
 
 
 
