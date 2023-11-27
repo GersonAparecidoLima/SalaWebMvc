@@ -109,11 +109,65 @@ namespace SalesWebMvc.Controllers
             var obj = await _sellerService.FindByIdAsync(id.Value);
             if (obj == null)
             {
-                return RedirectToAction(nameof(Error), new { message = "Id not found" });
+                return RedirectToAction(nameof(Error), new { message = "Id não encontrado" });
             }
 
             return View(obj);
         }
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            //Verifica se o Id e igual a nulo
+            if (id == null)
+            {
+                return RedirectToAction(nameof(Error), new { message = "Id não encontrado" });
+            }
+
+            //Verifica se o Id existe no banco de daos
+            var obj = await _sellerService.FindByIdAsync(id.Value);
+            // Verificar se o id exite no banco de dados 
+            if (obj == null)
+            {
+                return RedirectToAction(nameof(Error), new { message = "Id não encontrado" });
+            }
+            //Carregando o departamento
+            List<Department> departments = await _departmentService.FindAllAsync();
+            //Preencher com a edição com informações existente
+            SellerFormViewModel viewModel = new SellerFormViewModel { Seller = obj, Departments = departments };
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Seller seller)
+        {
+            //trata o caso em que o modelo (dados do formulário) não é válido,
+            //retornando a página do formulário com os dados do vendedor e a lista de
+            //departamentos para que o usuário possa corrigir qualquer erro de validação.
+            if (!ModelState.IsValid)
+            {
+                var departments = await _departmentService.FindAllAsync();
+                var viewModel = new SellerFormViewModel { Seller = seller, Departments = departments };
+                return View(viewModel);
+            }
+
+            //Verificar se id que foi passado e igual o do banco de dados
+            if (id != seller.Id)
+            {
+                return RedirectToAction(nameof(Error), new { message = "Id mismatch" });
+            }
+            try
+            {
+                await _sellerService.UpdateAsync(seller);
+                return RedirectToAction(nameof(Index));
+            }
+            catch (ApplicationException e)
+            {
+                return RedirectToAction(nameof(Error), new { message = e.Message });
+            }
+        }
+
+
 
 
 

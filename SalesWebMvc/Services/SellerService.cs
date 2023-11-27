@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using SalesWebMvc.Data;
 using SalesWebMvc.Models;
+using SalesWebMvc.Services.Exceptions;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -50,6 +51,26 @@ namespace SalesWebMvc.Services
             catch (DbUpdateException e)
             {
                 throw new IntegrityException("Can't delete seller because he/she has sales");
+            }
+        }
+
+        public async Task UpdateAsync(Seller obj)
+        {
+            //Testar se o Id esta no banco de dados
+            bool hasAny = await _context.Seller.AnyAsync(x => x.Id == obj.Id);
+            if (!hasAny)
+            {
+                throw new NotFoundException("Id não encontrado");
+            }
+            //Tratando exceção de conflito de concorrência
+            try
+            {
+                _context.Update(obj);
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException e)
+            {
+                throw new DbConcurrencyException(e.Message);
             }
         }
 
